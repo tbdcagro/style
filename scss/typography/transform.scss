@@ -1,0 +1,21 @@
+.text-capitalized {
+	text-transform: capitalize;
+}
+
+.text-lowercase {
+	text-transform: lowercase;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-italic {
+	font-style: italic;
+}
+
+.text-truncate {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

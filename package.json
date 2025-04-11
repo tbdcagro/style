@@ -1,0 +1,47 @@
+{
+  "name": "@tbdc-agro-softwares/style",
+  "version": "0.0.1",
+  "description": "Compact CSS framework",
+  "author": {
+    "name": "TBDC",
+    "email": "engineering@tbdc.com.br"
+  },
+  "main": "./scss/index.scss",
+  "style": "./css/index.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TBDC-Agro-Softwares/style.git"
+  },
+  "license": "MIT",
+  "exports": {
+    "./css": {
+      "import": "./css/index.css",
+      "require": "./css/index.css"
+    },
+    "./scss": {
+      "import": "./scss/index.scss",
+      "require": "./scss/index.scss"
+    },
+    "./scss/colors.scss": {
+      "import": "./scss/semantic_colors.scss",
+      "require": "./scss/semantic_colors.scss"
+    }
+  },
+  "files": [
+    "css",
+    "scss"
+  ],
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "framework"
+  ],
+  "scripts": {
+    "build": "rimraf css && sass ./scss:./css --no-source-map --style=compressed"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "sass": "^1.86.3"
+  }
+}

@@ -1,0 +1,57 @@
+@use 'sass:meta';
+@use '../colors/base_colors' as colors;
+
+$text-colors: (
+	main: (
+		default: colors.$tbdc-gray-900,
+		inverse: colors.$tbdc-white,
+		hovered: colors.$tbdc-green-800,
+		activated: colors.$tbdc-green-500,
+	),
+	neutral: (
+		lowest: colors.$tbdc-gray-400,
+		pure: colors.$tbdc-gray-600,
+		hovered: colors.$tbdc-green-800,
+		activated: colors.$tbdc-green-500,
+	),
+	interaction: (
+		pure: colors.$tbdc-teal-600,
+		hovered: colors.$tbdc-teal-400,
+		activated: colors.$tbdc-teal-300,
+	),
+	error: (
+		pure: colors.$tbdc-red-500,
+		hovered: colors.$tbdc-red-400,
+		activated: colors.$tbdc-red-300,
+	),
+	success: (
+		pure: colors.$tbdc-mint-600,
+		hovered: colors.$tbdc-mint-400,
+		activated: colors.$tbdc-mint-300,
+	),
+	warning: (
+		pure: colors.$tbdc-yellow-500,
+		hovered: colors.$tbdc-yellow-400,
+		activated: colors.$tbdc-yellow-300,
+	),
+	info: (
+		pure: colors.$tbdc-blue-600,
+		hovered: colors.$tbdc-blue-500,
+		activated: colors.$tbdc-blue-400,
+	),
+	disabled: colors.$tbdc-gray-100,
+);
+
+@each $color-type, $color-map in $text-colors {
+	@if meta.type-of($color-map) == 'map' {
+		@each $color-pair-name, $color-pair-value in $color-map {
+			.color-text-#{$color-type}-#{$color-pair-name} {
+				color: $color-pair-value;
+			}
+		}
+	} @else {
+		.color-text-#{$color-type} {
+			color: $color-map;
+		}
+	}
+}

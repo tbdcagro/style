@@ -1,0 +1,122 @@
+$margin-space-shortcut: 'm';
+$padding-space-shortcut: 'p';
+$top-shortcut: 't';
+$bottom-shortcut: 'b';
+$left-shortcut: 'l';
+$right-shortcut: 'r';
+$horizontal-shortcut: 'x';
+$vertical-shortcut: 'y';
+$gap-shortcut: 'gap';
+
+$spacing-list: (
+	0: 0,
+	2: 2px,
+	4: 4px,
+	8: 8px,
+	12: 12px,
+	16: 16px,
+	20: 20px,
+	24: 24px,
+	32: 32px,
+	40: 40px,
+	48: 48px,
+	56: 56px,
+	64: 64px,
+	80: 80px,
+);
+
+@each $name, $value in $spacing-list {
+	.#{$margin-space-shortcut}-#{'' + $name} {
+		margin: $value !important;
+	}
+
+	.#{$margin-space-shortcut}#{$top-shortcut}-#{'' + $name} {
+		margin-top: $value !important;
+	}
+
+	.#{$margin-space-shortcut}#{$bottom-shortcut}-#{'' + $name} {
+		margin-bottom: $value !important;
+	}
+
+	.#{$margin-space-shortcut}#{$left-shortcut}-#{'' + $name} {
+		margin-left: $value !important;
+	}
+
+	.#{$margin-space-shortcut}#{$right-shortcut}-#{'' + $name} {
+		margin-right: $value !important;
+	}
+
+	.#{$margin-space-shortcut}#{$horizontal-shortcut}-#{'' + $name} {
+		margin-left: $value !important;
+		margin-right: $value !important;
+	}
+
+	.#{$margin-space-shortcut}#{$vertical-shortcut}-#{'' + $name} {
+		margin-top: $value !important;
+		margin-bottom: $value !important;
+	}
+
+	.#{$padding-space-shortcut}-#{'' + $name} {
+		padding: $value !important;
+	}
+
+	.#{$padding-space-shortcut}#{$top-shortcut}-#{'' + $name} {
+		padding-top: $value !important;
+	}
+
+	.#{$padding-space-shortcut}#{$bottom-shortcut}-#{'' + $name} {
+		padding-bottom: $value !important;
+	}
+
+	.#{$padding-space-shortcut}#{$left-shortcut}-#{'' + $name} {
+		padding-left: $value !important;
+	}
+
+	.#{$padding-space-shortcut}#{$right-shortcut}-#{'' + $name} {
+		padding-right: $value !important;
+	}
+
+	.#{$padding-space-shortcut}#{$horizontal-shortcut}-#{'' + $name} {
+		padding-left: $value !important;
+		padding-right: $value !important;
+	}
+
+	.#{$padding-space-shortcut}#{$vertical-shortcut}-#{'' + $name} {
+		padding-top: $value !important;
+		padding-bottom: $value !important;
+	}
+
+	.#{$gap-shortcut}-#{'' + $name} {
+		gap: $value !important;
+	}
+}
+
+.#{$margin-space-shortcut}-auto {
+	margin: auto !important;
+}
+
+.#{$margin-space-shortcut}#{$top-shortcut}-auto {
+	margin-top: auto !important;
+}
+
+.#{$margin-space-shortcut}#{$bottom-shortcut}-auto {
+	margin-bottom: auto !important;
+}
+
+.#{$margin-space-shortcut}#{$left-shortcut}-auto {
+	margin-left: auto !important;
+}
+
+.#{$margin-space-shortcut}#{$right-shortcut}-auto {
+	margin-right: auto !important;
+}
+
+.#{$margin-space-shortcut}#{$horizontal-shortcut}-auto {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.#{$margin-space-shortcut}#{$vertical-shortcut}-auto {
+	margin-top: auto !important;
+	margin-bottom: auto !important;
+}

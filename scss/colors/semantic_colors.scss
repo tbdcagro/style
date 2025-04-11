@@ -1,0 +1,62 @@
+@use './base_colors.scss' as colors;
+
+$semantic-colors: (
+	fill: (
+		main: (
+			default: colors.$tbdc-white,
+			inverse: colors.$tbdc-gray-900,
+			hovered: colors.$tbdc-faded-50,
+			activated: colors.$tbdc-faded-100,
+		),
+		brand: (
+			lowest: colors.$tbdc-green-100,
+			pure: colors.$tbdc-green-800,
+			hovered: colors.$tbdc-green-500,
+			activated: colors.$tbdc-green-400,
+		),
+		secondary: (
+			lowest: colors.$tbdc-abstract-100,
+			pure: colors.$tbdc-abstract-400,
+			hovered: colors.$tbdc-abstract-300,
+			activated: colors.$tbdc-abstract-200,
+		),
+		interaction: (
+			lowest: colors.$tbdc-teal-50,
+			pure: colors.$tbdc-teal-600,
+			hovered: colors.$tbdc-teal-400,
+			activated: colors.$tbdc-teal-300,
+		),
+		neutral: (
+			lowest: colors.$tbdc-gray-50,
+			pure: colors.$tbdc-gray-200,
+			hovered: colors.$tbdc-faded-100,
+			activated: colors.$tbdc-faded-50,
+		),
+		error: (
+			lowest: colors.$tbdc-red-50,
+			pure: colors.$tbdc-red-500,
+			hovered: colors.$tbdc-red-400,
+			activated: colors.$tbdc-red-300,
+		),
+		success: (
+			lowest: colors.$tbdc-mint-50,
+			pure: colors.$tbdc-mint-600,
+			hovered: colors.$tbdc-mint-500,
+			activated: colors.$tbdc-mint-400,
+		),
+		warning: (
+			lowest: colors.$tbdc-yellow-50,
+			pure: colors.$tbdc-yellow-500,
+			hovered: colors.$tbdc-yellow-400,
+			activated: colors.$tbdc-yellow-300,
+		),
+		info: (
+			lowest: colors.$tbdc-blue-50,
+			pure: colors.$tbdc-blue-600,
+			hovered: colors.$tbdc-blue-500,
+			activated: colors.$tbdc-blue-400,
+		),
+		disabled: colors.$tbdc-gray-100,
+		background: colors.$tbdc-gray-50,
+	),
+);

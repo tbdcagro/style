@@ -1,0 +1,127 @@
+@use 'sass:meta';
+@use './colors/base_colors' as colors;
+
+$border-top-shortcut: 'top';
+$border-bottom-shortcut: 'bottom';
+$border-left-shortcut: 'left';
+$border-right-shortcut: 'right';
+$border-horizontal-shortcut: 'x';
+$border-vertical-shortcut: 'y';
+
+$color-border-main: colors.$tbdc-gray-900;
+$color-border-divider: colors.$tbdc-gray-100;
+
+$border-colors: (
+	neutral: (
+		pure: colors.$tbdc-gray-100,
+		high: colors.$tbdc-gray-400,
+		hovered: colors.$tbdc-gray-200,
+		activated: colors.$tbdc-gray-100,
+	),
+	error: (
+		pure: colors.$tbdc-red-500,
+		hovered: colors.$tbdc-red-400,
+		activated: colors.$tbdc-red-300,
+	),
+	success: (
+		pure: colors.$tbdc-mint-600,
+		hovered: colors.$tbdc-mint-400,
+		activated: colors.$tbdc-mint-300,
+	),
+	warning: (
+		pure: colors.$tbdc-yellow-500,
+		hovered: colors.$tbdc-yellow-400,
+		activated: colors.$tbdc-yellow-300,
+	),
+	info: (
+		pure: colors.$tbdc-blue-600,
+		hovered: colors.$tbdc-blue-500,
+		activated: colors.$tbdc-blue-400,
+	),
+	brand: (
+		pure: colors.$tbdc-green-800,
+		hovered: colors.$tbdc-green-500,
+		activated: colors.$tbdc-green-400,
+	),
+	interaction: (
+		pure: colors.$tbdc-teal-600,
+		hovered: colors.$tbdc-teal-400,
+		activated: colors.$tbdc-teal-300,
+	),
+	secondary: (
+		pure: colors.$tbdc-abstract-400,
+		hovered: colors.$tbdc-abstract-300,
+		activated: colors.$tbdc-abstract-200,
+	),
+	main: $color-border-main,
+	divider: $color-border-divider,
+);
+
+$border-weight: (
+	none: 0px,
+	xsmall: 1px,
+	small: 1.5px,
+	medium: 2px,
+	large: 2.5px,
+);
+
+@each $name, $value in $border-weight {
+	.border-weight-#{$name} {
+		border: $value solid $color-border-main;
+	}
+
+	.border-weight-#{$border-top-shortcut}-#{$name} {
+		border-top: $value solid $color-border-main;
+	}
+
+	.border-weight-#{$border-bottom-shortcut}-#{$name} {
+		border-bottom: $value solid $color-border-main;
+	}
+
+	.border-weight-#{$border-left-shortcut}-#{$name} {
+		border-left: $value solid $color-border-main;
+	}
+
+	.border-weight-#{$border-right-shortcut}-#{$name} {
+		border-right: $value solid $color-border-main;
+	}
+
+	.border-weight-#{$border-horizontal-shortcut}-#{$name} {
+		border-left: $value solid $color-border-main;
+		border-right: $value solid $color-border-main;
+	}
+
+	.border-weight-#{$border-vertical-shortcut}-#{$name} {
+		border-top: $value solid $color-border-main;
+		border-bottom: $value solid $color-border-main;
+	}
+}
+
+@each $color-type, $color-map in $border-colors {
+	@if meta.type-of($color-map) == 'map' {
+		@each $color-pair-name, $color-pair-value in $color-map {
+			.color-border-#{$color-type}-#{$color-pair-name} {
+				border-color: $color-pair-value;
+			}
+		}
+	} @else {
+		.color-border-#{$color-type} {
+			border-color: $color-map;
+		}
+	}
+}
+
+$border-radius: (
+	none: 0px,
+	small: 8px,
+	medium: 16px,
+	large: 24px,
+	pill: 48px,
+	circle: 100%,
+);
+
+@each $name, $value in $border-radius {
+	.border-radius-#{$name} {
+		border-radius: $value;
+	}
+}
