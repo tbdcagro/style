@@ -25,10 +25,6 @@
     "./scss": {
       "import": "./scss/index.scss",
       "require": "./scss/index.scss"
-    },
-    "./scss/colors.scss": {
-      "import": "./scss/semantic_colors.scss",
-      "require": "./scss/semantic_colors.scss"
     }
   },
   "files": [

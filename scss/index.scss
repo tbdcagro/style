@@ -1,14 +1,18 @@
-@use './colors/base_colors';
-@use './colors/semantic_colors';
+// Colors
+@forward "./colors/base_colors";
+@forward "./colors/semantic_colors" as colors-*;
 
-@use './core/flex';
-@use './core/mini_reset';
-@use './core/spacing';
+// Core
+@forward "./core/flex";
+@forward "./core/mini_reset";
+@forward "./core/spacing" as spacing-*;
 
-@use './typography/alignment';
-@use './typography/colors';
-@use './typography/main';
-@use './typography/transform';
+// Typography
+@forward "./typography/alignment";
+@forward "./typography/colors" as text-colors-*;
+@forward "./typography/main";
+@forward "./typography/transform";
 
-@use './border';
-@use './shadow';
+// Border and shadow
+@forward "./border" as border-*;
+@forward "./shadow" as shadow-*;
