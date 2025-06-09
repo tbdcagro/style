@@ -13,8 +13,7 @@
     "url": "git+https://github.com/TBDC-Agro-Softwares/style.git"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/@tbdc-agro-softwares/style"
+    "access": "public"
   },
   "license": "MIT",
   "exports": {
