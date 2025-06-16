@@ -1,5 +1,5 @@
 {
-  "name": "@tbdc-agro-softwares/style",
+  "name": "@tbdcagro/style",
   "version": "0.0.8",
   "description": "Compact CSS framework",
   "author": {
@@ -10,7 +10,7 @@
   "style": "./css/index.css",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TBDC-Agro-Softwares/style.git"
+    "url": "git+https://github.com/tbdcagro/style.git"
   },
   "publishConfig": {
     "access": "public"
