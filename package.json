@@ -24,6 +24,14 @@
     "./scss": {
       "import": "./scss/index.scss",
       "require": "./scss/index.scss"
+    },
+    "./scss/no-reset": {
+      "import": "./scss/no-reset.scss",
+      "require": "./scss/no-reset.scss"
+    },
+    "./utils": {
+      "import": "./scss/utils.scss",
+      "require": "./scss/utils.scss"
     }
   },
   "files": [

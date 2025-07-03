@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "./colors/semantic_colors" as colors;
+@use "./typography/colors" as text-colors;
+@use "./border" as border-colors;
+@use "./typography/main" as typo;
+
+@function deep-get($map, $keys...) {
+  $current: $map;
+
+  @each $key in $keys {
+    $current: map.get($current, $key);
+    @if $current == null {
+      @return null;
+    }
+  }
+
+  @return $current;
+}
+
+/* Fill/Interaction/Pure -> utils.color('fill', 'interaction', 'pure') */
+@function color($args...) {
+  @return deep-get(colors.$semantic-colors, $args...);
+}
+
+/* Text/Neutral/Pure -> utils.text-color('neutral', 'pure') */
+@function text-color($args...) {
+  @return deep-get(text-colors.$text-colors, $args...);
+}
+
+/* Border/Neutral/High -> utils.border-color('neutral', 'high') */
+@function border-color($args...) {
+  @return deep-get(border-colors.$border-colors, $args...);
+}
+
+/* Paragraph/Medium/Mid -> @include utils.typography('paragraph', 'medium-mid') */
+@mixin typography($args...) {
+  $font: deep-get(typo.$typographies, $args...);
+
+  font-size: map.get($font, "size");
+  font-weight: map.get($font, "weight");
+  line-height: map.get($font, "line-height");
+}
+
+/* @include utils.disabled() */
+@mixin disabled($opacity: 1) {
+  pointer-events: none;
+  opacity: $opacity;
+}
+
+@mixin scrollbar() {
+  $thumb-color: color("fill", "neutral", "pure");
+  $track-color: color("fill", "neutral", "lowest");
+  $width: 4px;
+  $radius: 2px;
+
+  scrollbar-width: thin;
+  scrollbar-color: $thumb-color $track-color;
+
+  /* Chrome, Edge and Safari */
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: $thumb-color;
+  }
+}

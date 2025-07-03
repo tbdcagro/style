@@ -1,12 +1,10 @@
-/* Should be the same in no-reset.scss */
-
 // Colors
 @forward "./colors/base_colors";
 @forward "./colors/semantic_colors" as colors-*;
 
 // Core
 @forward "./core/flex";
-@forward "./core/mini_reset";
+// @forward "./core/mini_reset"; -> Next projects can not resolve global resets
 @forward "./core/spacing" as spacing-*;
 
 // Typography
