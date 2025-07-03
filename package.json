@@ -29,7 +29,7 @@
       "import": "./scss/no-reset.scss",
       "require": "./scss/no-reset.scss"
     },
-    "./utils": {
+    "./scss/utils": {
       "import": "./scss/utils.scss",
       "require": "./scss/utils.scss"
     }
