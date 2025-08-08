@@ -1,3 +1,5 @@
+@use "../colors/base_colors" as colors;
+
 html,
 body,
 p,
@@ -21,8 +23,8 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -31,58 +33,62 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: 100%;
-	font-weight: normal;
+  font-size: 100%;
+  font-weight: normal;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 button,
 input,
 select,
 textarea {
-	margin: 0;
+  margin: 0;
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-	letter-spacing: 0px;
+  letter-spacing: 0px;
 
-	&,
-	&::before,
-	&::after {
-		box-sizing: inherit;
-	}
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 img,
 video {
-	height: auto;
-	max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 iframe {
-	border: 0;
+  border: 0;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td,
 th {
-	padding: 0;
-	&:not([align]) {
-		text-align: inherit;
-	}
+  padding: 0;
+  &:not([align]) {
+    text-align: inherit;
+  }
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
+}
+
+body {
+  color: colors.$tbdc-black;
 }
