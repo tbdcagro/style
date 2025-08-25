@@ -18,3 +18,9 @@
 // Border and shadow
 @forward "./border" as border-*;
 @forward "./shadow" as shadow-*;
+
+// Icon
+@forward "./icon/colors" as icon-colors-*;
+
+// Chart
+@forward "./chart/colors" as chart-colors-*;

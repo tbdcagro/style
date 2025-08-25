@@ -1,0 +1,50 @@
+@use "sass:meta";
+@use "../colors/base_colors" as colors;
+
+$icon-colors: (
+  main: (
+    default: colors.$tbdc-gray-900,
+    inverse: colors.$tbdc-white,
+    pressed: colors.$tbdc-green-500,
+  ),
+  neutral: (
+    lowest: colors.$tbdc-gray-400,
+    pure: colors.$tbdc-gray-600,
+    pressed: colors.$tbdc-green-500,
+  ),
+  interaction: (
+    pure: colors.$tbdc-teal-600,
+    pressed: colors.$tbdc-teal-300,
+  ),
+  error: (
+    pure: colors.$tbdc-red-500,
+    pressed: colors.$tbdc-red-300,
+  ),
+  success: (
+    pure: colors.$tbdc-mint-600,
+    pressed: colors.$tbdc-mint-300,
+  ),
+  warning: (
+    pure: colors.$tbdc-yellow-500,
+    pressed: colors.$tbdc-yellow-300,
+  ),
+  info: (
+    pure: colors.$tbdc-blue-600,
+    pressed: colors.$tbdc-blue-400,
+  ),
+  disabled: colors.$tbdc-gray-100,
+);
+
+@each $color-type, $color-map in $icon-colors {
+  @if meta.type-of($color-map) == "map" {
+    @each $color-pair-name, $color-pair-value in $color-map {
+      .color-icon-#{$color-type}-#{$color-pair-name} {
+        color: $color-pair-value;
+      }
+    }
+  } @else {
+    .color-icon-#{$color-type} {
+      color: $color-map;
+    }
+  }
+}
