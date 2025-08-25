@@ -2,15 +2,15 @@
 @use "../colors/base_colors" as colors;
 
 $chart-colors: (
-  yellow: colors.$tbdc-yellow-300,
-  gray: colors.$tbdc-gray-600,
-  red: colors.$tbdc-red-600,
-  blue: colors.$tbdc-blue-600,
-  purple: colors.$tbdc-purple-600,
-  orange: colors.$tbdc-orange-600,
-  green: colors.$tbdc-green-600,
-  pink: colors.$tbdc-pink-600,
-  brown: colors.$tbdc-brown-600,
+  "yellow": colors.$tbdc-yellow-300,
+  "gray": colors.$tbdc-gray-600,
+  "red": colors.$tbdc-red-600,
+  "blue": colors.$tbdc-blue-600,
+  "purple": colors.$tbdc-purple-600,
+  "orange": colors.$tbdc-orange-600,
+  "green": colors.$tbdc-green-600,
+  "pink": colors.$tbdc-pink-600,
+  "brown": colors.$tbdc-brown-600,
 );
 
 @each $color-type, $color-map in $chart-colors {
