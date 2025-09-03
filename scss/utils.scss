@@ -32,6 +32,15 @@
   @return deep-get(border-colors.$border-colors, $args...);
 }
 
+/* Border/Neutral/High -> utils.border-color('neutral', 'high') */
+@function icon-color($args...) {
+  @return deep-get(styles.$icon-colors-icon-colors, $args...);
+}
+
+@function border-radius($borderRadius) {
+  @return map.get(styles.$border-border-radius, $borderRadius);
+}
+
 /* Paragraph/Medium/Mid -> @include utils.typography('paragraph', 'medium-mid') */
 @mixin typography($args...) {
   $font: deep-get(typo.$typographies, $args...);
