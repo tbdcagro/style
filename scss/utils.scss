@@ -1,7 +1,8 @@
 @use "sass:map";
 @use "./colors/semantic_colors" as colors;
 @use "./typography/colors" as text-colors;
-@use "./border" as border-colors;
+@use "./border" as border;
+@use "./icon/colors.scss" as icon-colors;
 @use "./typography/main" as typo;
 
 @function deep-get($map, $keys...) {
@@ -27,9 +28,17 @@
   @return deep-get(text-colors.$text-colors, $args...);
 }
 
+/* Icon/Neutral/Default -> utils.icon-color('neutral', 'default') */
+@function icon-color($args...) {
+  @return deep-get(icon-colors.$icon-colors, $args...);
+}
+
 /* Border/Neutral/High -> utils.border-color('neutral', 'high') */
 @function border-color($args...) {
-  @return deep-get(border-colors.$border-colors, $args...);
+  @return deep-get(border.$border-colors, $args...);
+}
+@function border-radius($borderRadius) {
+  @return map.get(border.$border-radius, $borderRadius);
 }
 
 /* Paragraph/Medium/Mid -> @include utils.typography('paragraph', 'medium-mid') */
