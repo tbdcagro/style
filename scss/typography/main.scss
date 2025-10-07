@@ -1,103 +1,113 @@
-@use 'sass:list';
-@use 'sass:map';
+@use "sass:list";
+@use "sass:map";
 
 $typographies: (
-	display: (
-		large-highlight: (
-			size: 48px,
-			weight: 600,
-			line-height: 52px,
-		),
-		medium-highlight: (
-			size: 40px,
-			weight: 600,
-			line-height: 44px,
-		),
-	),
-	title: (
-		large-strong: (
-			size: 24px,
-			weight: 700,
-			line-height: 32px,
-		),
-		large-regular: (
-			size: 24px,
-			weight: 400,
-			line-height: 32px,
-		),
-		medium-strong: (
-			size: 20px,
-			weight: 700,
-			line-height: 28px,
-		),
-	),
-	subtitle: (
-		large-highlight: (
-			size: 18px,
-			weight: 600,
-			line-height: 24px,
-		),
-		large-mid: (
-			size: 18px,
-			weight: 500,
-			line-height: 24px,
-		),
-		medium-highlight: (
-			size: 16px,
-			weight: 600,
-			line-height: 22px,
-		),
-		medium-regular: (
-			size: 16px,
-			weight: 400,
-			line-height: 22px,
-		),
-	),
-	paragraph: (
-		large-highlight: (
-			size: 14px,
-			weight: 600,
-			line-height: 20px,
-		),
-		large-regular: (
-			size: 14px,
-			weight: 400,
-			line-height: 20px,
-		),
-		medium-highlight: (
-			size: 12px,
-			weight: 600,
-			line-height: 18px,
-		),
-		medium-mid: (
-			size: 12px,
-			weight: 500,
-			line-height: 18px,
-		),
-		small-regular: (
-			size: 10px,
-			weight: 400,
-			line-height: 14px,
-		),
-		small-strong: (
-			size: 10px,
-			weight: 700,
-			line-height: 14px,
-		),
-		small-highlight: (
-			size: 10px,
-			weight: 600,
-			line-height: 14px,
-		),
-	),
+  display: (
+    large-highlight: (
+      size: 48px,
+      weight: 600,
+      line-height: 52px,
+    ),
+    medium-highlight: (
+      size: 40px,
+      weight: 600,
+      line-height: 44px,
+    ),
+    small-mid: (
+      size: 32px,
+      weight: 500,
+      line-height: 36px,
+    ),
+  ),
+  title: (
+    large-strong: (
+      size: 24px,
+      weight: 700,
+      line-height: 32px,
+    ),
+    large-regular: (
+      size: 24px,
+      weight: 400,
+      line-height: 32px,
+    ),
+    medium-strong: (
+      size: 20px,
+      weight: 700,
+      line-height: 28px,
+    ),
+  ),
+  subtitle: (
+    large-highlight: (
+      size: 18px,
+      weight: 600,
+      line-height: 24px,
+    ),
+    large-mid: (
+      size: 18px,
+      weight: 500,
+      line-height: 24px,
+    ),
+    medium-highlight: (
+      size: 16px,
+      weight: 600,
+      line-height: 22px,
+    ),
+    medium-regular: (
+      size: 16px,
+      weight: 400,
+      line-height: 22px,
+    ),
+  ),
+  paragraph: (
+    large-highlight: (
+      size: 14px,
+      weight: 600,
+      line-height: 20px,
+    ),
+    large-regular: (
+      size: 14px,
+      weight: 400,
+      line-height: 20px,
+    ),
+    medium-highlight: (
+      size: 12px,
+      weight: 600,
+      line-height: 18px,
+    ),
+    medium-mid: (
+      size: 12px,
+      weight: 500,
+      line-height: 18px,
+    ),
+    medium-regular: (
+      size: 12px,
+      weight: 400,
+      line-height: 18px,
+    ),
+    small-regular: (
+      size: 10px,
+      weight: 400,
+      line-height: 14px,
+    ),
+    small-strong: (
+      size: 10px,
+      weight: 700,
+      line-height: 14px,
+    ),
+    small-highlight: (
+      size: 10px,
+      weight: 600,
+      line-height: 14px,
+    ),
+  ),
 );
 
 @each $type, $type-map in $typographies {
-	@each $name, $properties in $type-map {
-		.typography-#{$type}-#{$name} {
-			font-size: map.get($map: $properties, $key: size);
-			font-weight: map.get($map: $properties, $key: weight);
-			line-height: map.get($map: $properties, $key: line-height);
-		}
-	}
+  @each $name, $properties in $type-map {
+    .typography-#{$type}-#{$name} {
+      font-size: map.get($map: $properties, $key: size);
+      font-weight: map.get($map: $properties, $key: weight);
+      line-height: map.get($map: $properties, $key: line-height);
+    }
+  }
 }
