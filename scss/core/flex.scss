@@ -1,56 +1,140 @@
 .is-flex {
-	display: flex !important;
+  display: flex !important;
 }
 
 .is-flex-column {
-	display: flex;
-	flex-direction: column !important;
+  display: flex;
+  flex-direction: column !important;
+}
+
+.is-inline-flex {
+  display: inline-flex !important;
 }
 
 .justify-between {
-	justify-content: space-between !important;
+  justify-content: space-between !important;
 }
 
 .justify-around {
-	justify-content: space-around !important;
+  justify-content: space-around !important;
 }
 
 .justify-center {
-	justify-content: center !important;
+  justify-content: center !important;
 }
 
 .justify-start {
-	justify-content: flex-start !important;
+  justify-content: flex-start !important;
 }
 
 .justify-end {
-	justify-content: flex-end !important;
+  justify-content: flex-end !important;
 }
 
 .align-center {
-	align-items: center !important;
+  align-items: center !important;
 }
 
 .align-end {
-	align-items: flex-end !important;
+  align-items: flex-end !important;
 }
 
 .flex-wrap {
-	flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
 }
 
 .align-self-center {
-	align-self: center !important;
+  align-self: center !important;
 }
 
 .align-self-stretch {
-	align-self: stretch !important;
+  align-self: stretch !important;
 }
 
 .align-self-start {
-	align-self: start !important;
+  align-self: start !important;
 }
 
 .align-self-end {
-	align-self: end !important;
+  align-self: end !important;
 }
+
+// -------- Flex Direction --------
+$flex-directions: row, row-reverse, column, column-reverse;
+@each $dir in $flex-directions {
+  .flex-#{$dir} {
+    flex-direction: $dir !important;
+  }
+}
+
+// -------- Flex Wrap --------
+$flex-wraps: (wrap, nowrap, wrap-reverse);
+@each $wrap in $flex-wraps {
+  .flex-#{$wrap} {
+    flex-wrap: $wrap !important;
+  }
+}
+
+// -------- Flex Grow / Shrink --------
+$grow-values: 0, 1;
+@each $val in $grow-values {
+  .flex-grow-#{$val} {
+    flex-grow: $val !important;
+  }
+  .flex-shrink-#{$val} {
+    flex-shrink: $val !important;
+  }
+}
+
+// -------- Flex Basis --------
+$basis-values: (
+  auto: auto,
+  0: 0,
+  full: 100%,
+);
+@each $name, $val in $basis-values {
+  .flex-basis-#{$name} {
+    flex-basis: $val !important;
+  }
+}
+
+// -------- Flex (proporções) --------
+$flex-shorthands: (
+  0: 0 0 auto,
+  1: 1 1 0%,
+  2: 2 1 0%,
+  3: 3 1 0%,
+  4: 4 1 0%,
+  5: 5 1 0%,
+  6: 6 1 0%,
+  7: 7 1 0%,
+  8: 7 1 0%,
+  9: 7 1 0%,
+  10: 7 1 0%,
+  auto: 1 1 auto,
+  initial: 0 1 auto,
+  none: none,
+);
+
+@each $name, $val in $flex-shorthands {
+  .flex-#{$name} {
+    flex: $val !important;
+  }
+}
+
+// -------- Order --------
+@mixin generate-order($from: 0, $to: 10) {
+  @for $i from $from through $to {
+    .order-#{$i} {
+      order: $i !important;
+    }
+  }
+  .order-first {
+    order: -9999 !important;
+  }
+  .order-last {
+    order: 9999 !important;
+  }
+}
+
+@include generate-order(0, 10);
