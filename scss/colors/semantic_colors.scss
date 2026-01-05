@@ -68,12 +68,12 @@ $semantic-colors: (
     @if meta.type-of($color-type-map) == "map" {
       @each $color-pair-name, $color-pair-value in $color-type-map {
         .color-background-#{$color-group}-#{$color-type}-#{$color-pair-name} {
-          color: $color-pair-value;
+          background-color: $color-pair-value;
         }
       }
     } @else {
       .color-background-#{$color-group}-#{$color-type} {
-        color: $color-type-map;
+        background-color: $color-type-map;
       }
     }
   }
