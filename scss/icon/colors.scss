@@ -5,34 +5,41 @@ $icon-colors: (
   main: (
     default: colors.$tbdc-gray-900,
     inverse: colors.$tbdc-white,
-    pressed: colors.$tbdc-green-500,
+    hovered: colors.$tbdc-green-800,
+    activated: colors.$tbdc-green-500,
   ),
   neutral: (
     lowest: colors.$tbdc-gray-400,
     pure: colors.$tbdc-gray-600,
-    pressed: colors.$tbdc-green-500,
+    hovered: colors.$tbdc-green-800,
+    activated: colors.$tbdc-green-500,
   ),
   interaction: (
     pure: colors.$tbdc-teal-600,
-    pressed: colors.$tbdc-teal-300,
+    hovered: colors.$tbdc-teal-400,
+    activated: colors.$tbdc-teal-300,
   ),
   error: (
     pure: colors.$tbdc-red-500,
-    pressed: colors.$tbdc-red-300,
+    hovered: colors.$tbdc-red-400,
+    activated: colors.$tbdc-red-300,
   ),
   success: (
     pure: colors.$tbdc-mint-600,
-    pressed: colors.$tbdc-mint-300,
+    hovered: colors.$tbdc-mint-400,
+    activated: colors.$tbdc-mint-300,
   ),
   warning: (
     pure: colors.$tbdc-yellow-500,
-    pressed: colors.$tbdc-yellow-300,
+    hovered: colors.$tbdc-yellow-300,
+    activated: colors.$tbdc-yellow-300,
   ),
   info: (
     pure: colors.$tbdc-blue-600,
-    pressed: colors.$tbdc-blue-400,
+    hovered: colors.$tbdc-blue-500,
+    activated: colors.$tbdc-blue-400,
   ),
-  disabled: colors.$tbdc-gray-100,
+  disabled: colors.$tbdc-gray-300,
 );
 
 @each $color-type, $color-map in $icon-colors {
