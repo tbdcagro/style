@@ -22,3 +22,7 @@ demo.html
 *.njsproj
 *.sln
 *.sw?
+
+# Documentation
+docs/.vitepress/cache
+docs/.vitepress/dist

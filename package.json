@@ -49,10 +49,14 @@
     "framework"
   ],
   "scripts": {
-    "build": "rimraf css && sass ./scss:./css --no-source-map --style=compressed"
+    "build": "rimraf css && sass ./scss:./css --no-source-map --style=compressed",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "rimraf": "^6.0.1",
-    "sass": "^1.86.3"
+    "sass": "^1.86.3",
+    "vitepress": "2.0.0-alpha.17"
   }
 }
