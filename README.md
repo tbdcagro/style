@@ -7,7 +7,7 @@
 
 ---
 
-# 🧱 @tbdcagro/styles
+# 🧱 @tbdcagro/style
 
 Design tokens, utilitários e resets de CSS/SCSS para projetos da TBDC Agro. Suporte completo a SCSS modular (`@use`/`@forward`) com entradas separadas para uso com ou sem resets globais.
 
@@ -16,9 +16,9 @@ Design tokens, utilitários e resets de CSS/SCSS para projetos da TBDC Agro. Sup
 ## ✨ Instalação
 
 ```bash
-pnpm add @tbdcagro/styles
+pnpm add @tbdcagro/style
 # ou
-npm install @tbdcagro/styles
+npm install @tbdcagro/style
 ```
 
 ---
@@ -29,10 +29,10 @@ O pacote expõe diferentes pontos de entrada para estilos, dependendo do seu cas
 
 | Caminho                          | Descrição                                                    |
 | -------------------------------- | ------------------------------------------------------------ |
-| `@tbdcagro/styles/css`           | CSS global (reset incluso), para uso direto em apps sem SCSS |
-| `@tbdcagro/styles/scss`          | SCSS com tokens + reset global                               |
-| `@tbdcagro/styles/scss/no-reset` | SCSS com tokens, sem reset global                            |
-| `@tbdcagro/styles/scss/utils`    | Funções e mixins utilitários, sem gerar CSS extra            |
+| `@tbdcagro/style/css`           | CSS global (reset incluso), para uso direto em apps sem SCSS |
+| `@tbdcagro/style/scss`          | SCSS com tokens + reset global                               |
+| `@tbdcagro/style/scss/no-reset` | SCSS com tokens, sem reset global                            |
+| `@tbdcagro/style/scss/utils`    | Funções e mixins utilitários, sem gerar CSS extra            |
 
 ---
 
@@ -41,7 +41,7 @@ O pacote expõe diferentes pontos de entrada para estilos, dependendo do seu cas
 ### 🔹 Com reset global
 
 ```scss
-@use "@tbdcagro/styles/scss";
+@use "@tbdcagro/style/scss";
 
 .my-component {
   color: scss.$colors-semantic-colors.primary.default;
@@ -51,7 +51,7 @@ O pacote expõe diferentes pontos de entrada para estilos, dependendo do seu cas
 ### 🔹 Sem reset global
 
 ```scss
-@use "@tbdcagro/styles/scss/no-reset" as tokens;
+@use "@tbdcagro/style/scss/no-reset" as tokens;
 
 .card {
   padding: tokens.$spacing-lg;
@@ -67,7 +67,7 @@ O módulo `utils` expõe funções e mixins para facilitar o uso de tokens de fo
 ### Importação
 
 ```scss
-@use "@tbdcagro/styles/scss/utils" as utils;
+@use "@tbdcagro/style/scss/utils" as utils;
 ```
 
 ### Exemplos
@@ -114,7 +114,7 @@ Recomendado importar os estilos globais apenas uma vez no seu layout:
 
 ```scss
 // styles/globals.scss
-@use "@tbdcagro/styles/scss/no-reset";
+@use "@tbdcagro/style/scss/no-reset";
 ```
 
 ```ts
@@ -129,5 +129,5 @@ Depois, use os tokens e utilitários nos componentes via `@use`.
 ## ✅ Boas práticas
 
 - Prefira sempre `@use` ao invés de `@import`
-- Evite importar `@tbdcagro/styles/scss` em vários lugares se estiver gerando CSS (use só no global)
-- Use `@tbdcagro/styles/scss/utils` apenas para acesso a funções e mixins
+- Evite importar `@tbdcagro/style/scss` em vários lugares se estiver gerando CSS (use só no global)
+- Use `@tbdcagro/style/scss/utils` apenas para acesso a funções e mixins
